@@ -49,6 +49,19 @@
       render();
       //   Create subscribing for rendering the state
       store.subscribe(render);
+
+      //   Increment addEventListener function
+      document
+        .getElementById("increment")
+        .addEventListener("click", function () {
+          store.dispatch(increment());
+        });
+      //   Decrement addEventListener function
+      document
+        .getElementById("decrement")
+        .addEventListener("click", function () {
+          store.dispatch(decrement());
+        });
     </script>
   </body>
 </html>
