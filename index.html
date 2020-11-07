@@ -37,6 +37,18 @@
 
       //   Create store
       const store = RTK.configureStore({ reducer: counterSlice.reducer });
+      //   Create dynamic variable for value
+      const valueEl = document.getElementById("value");
+
+      //   Create render function
+      function render() {
+        //   store state will be string value
+        valueEl.innerHTML = store.getState().toString();
+      }
+
+      render();
+      //   Create subscribing for rendering the state
+      store.subscribe(render);
     </script>
   </body>
 </html>
