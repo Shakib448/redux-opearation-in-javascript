@@ -34,21 +34,31 @@
         font-size: 200px;
         font-weight: bold;
       }
-      #increment {
-        padding: 10px;
-        margin: 0 0 10px 0;
-      }
-      #decrement {
-        padding: 10px;
-        margin: 0 0 10px 0;
-      }
-      #incrementIfOdd {
-        padding: 10px;
-        margin: 0 0 10px 0;
-      }
+      #increment,
+      #decrement,
+      #incrementIfOdd,
       #incrementAsync {
         padding: 10px;
         margin: 0 0 10px 0;
+        font-size: 20px;
+        font-weight: bold;
+        border: 2px solid #fff;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      #increment:hover,
+      #decrement:hover,
+      #incrementIfOdd:hover,
+      #incrementAsync:hover {
+        background: transparent;
+        border: 2px solid #04b066;
+        color: #04b066;
+      }
+      #increment:focus,
+      #decrement:focus,
+      #incrementIfOdd:focus,
+      #incrementAsync:focus {
+        outline: 0;
       }
     </style>
   </head>
