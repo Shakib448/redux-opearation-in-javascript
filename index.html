@@ -7,17 +7,41 @@
     <script src="https://unpkg.com/@reduxjs/toolkit@latest/dist/redux-toolkit.umd.js"></script>
 
     <title>Simple Redux Operation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        height: 100vh;
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .redux__content {
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        color: #04b066;
+        background: #1c1e1f;
+        width: 400px;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <p>
+    <main>
+      <div class="redux__content">
         CLicked : <span id="value">0</span> time
         <button id="increment">+</button>
         <button id="decrement">-</button>
         <button id="incrementIfOdd">Increment if odd</button>
         <button id="incrementAsync">Increment async</button>
-      </p>
-    </div>
+      </div>
+    </main>
     <script>
       // RTK = Redux toolkit
       const RTK = window.RTK;
