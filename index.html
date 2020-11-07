@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Redux CND -->
+    <script src="https://unpkg.com/@reduxjs/toolkit@latest/dist/redux-toolkit.umd.js"></script>
+
+    <title>Simple Redux Operation</title>
+  </head>
+  <body>
+    <div>
+      <p>
+        CLicked : <span id="value">0</span> time
+        <button id="increment">+</button>
+        <button id="decrement">-</button>
+        <button id="incrementIfOdd">Increment if odd</button>
+        <button id="incrementAsync">Increment async</button>
+      </p>
+    </div>
+    <script>
+      // RTK = Redux toolkit
+      const RTK = window.RTK;
+
+      //   Creating the slice
+      const counterSlice = RTK.createSlice({
+        name: "counter",
+        initialState: 0,
+        reducers: {
+          increment: (state) => state + 1,
+          decrement: (state) => state - 1,
+        },
+      });
+
+      //   Destructing actions
+      const { increment, decrement } = counterSlice.actions;
+    </script>
+  </body>
+</html>
