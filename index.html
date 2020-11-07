@@ -32,8 +32,11 @@
         },
       });
 
-      //   Destructing actions
+      //   Destructuring actions
       const { increment, decrement } = counterSlice.actions;
+
+      //   Create store
+      const store = RTK.configureStore({ reducer: counterSlice.reducer });
     </script>
   </body>
 </html>
