@@ -62,6 +62,22 @@
         .addEventListener("click", function () {
           store.dispatch(decrement());
         });
+      //  Increment of an odd number
+      document
+        .getElementById("incrementIfOdd")
+        .addEventListener("click", function () {
+          if (store.getState() % 2 !== 0) {
+            store.dispatch(increment());
+          }
+        });
+      //  Increment async number
+      document
+        .getElementById("incrementAsync")
+        .addEventListener("click", function () {
+          setTimeout(function () {
+            store.dispatch(increment());
+          }, 1000);
+        });
     </script>
   </body>
 </html>
