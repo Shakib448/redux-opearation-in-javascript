@@ -6,63 +6,9 @@
     <!-- Redux CND -->
     <script src="https://unpkg.com/@reduxjs/toolkit@latest/dist/redux-toolkit.umd.js"></script>
 
+    <!-- Style Css -->
+    <link rel="stylesheet" href="style.css" />
     <title>Simple Redux Operation</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      main {
-        height: 100vh;
-        background: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .redux__content {
-        padding: 5%;
-        display: flex;
-        flex-direction: column;
-        color: #04b066;
-        background: #1c1e1f;
-        width: 400px;
-      }
-      #value {
-        font-size: 200px;
-        font-weight: bold;
-      }
-      #increment,
-      #decrement,
-      #incrementIfOdd,
-      #incrementAsync {
-        padding: 10px;
-        margin: 0 0 10px 0;
-        font-size: 20px;
-        font-weight: bold;
-        border: 2px solid #566155;
-        color: #566155;
-        transition: 0.5s;
-        cursor: pointer;
-        background: transparent;
-      }
-      #increment:hover,
-      #decrement:hover,
-      #incrementIfOdd:hover,
-      #incrementAsync:hover {
-        background: transparent;
-        border: 2px solid #04b066;
-        color: #04b066;
-      }
-      #increment:focus,
-      #decrement:focus,
-      #incrementIfOdd:focus,
-      #incrementAsync:focus {
-        outline: 0;
-      }
-    </style>
   </head>
   <body>
     <main>
@@ -74,69 +20,7 @@
         <button id="incrementAsync">Increment async</button>
       </div>
     </main>
-    <script>
-      // RTK = Redux toolkit
-      const RTK = window.RTK;
-
-      //   Creating the slice
-      const counterSlice = RTK.createSlice({
-        name: "counter",
-        initialState: 0,
-        reducers: {
-          increment: (state) => state + 1,
-          decrement: (state) => state - 1,
-        },
-      });
-
-      //   Destructuring actions
-      const { increment, decrement } = counterSlice.actions;
-
-      //   Create store
-      const store = RTK.configureStore({ reducer: counterSlice.reducer });
-      //   Create dynamic variable for value
-      const valueEl = document.getElementById("value");
-
-      //   Create render function
-      function render() {
-        //   store state will be string value
-        valueEl.innerHTML = store.getState().toString();
-      }
-
-      render();
-
-      //   Create subscribing for rendering the state
-      store.subscribe(render);
-
-      //   Increment addEventListener function
-      document
-        .getElementById("increment")
-        .addEventListener("click", function () {
-          store.dispatch(increment());
-        });
-      //   Decrement addEventListener function
-      document
-        .getElementById("decrement")
-        .addEventListener("click", function () {
-          if (store.getState() > 0) {
-            store.dispatch(decrement());
-          }
-        });
-      //  Increment of an odd number
-      document
-        .getElementById("incrementIfOdd")
-        .addEventListener("click", function () {
-          if (store.getState() % 2 !== 0) {
-            store.dispatch(increment());
-          }
-        });
-      //  Increment async number
-      document
-        .getElementById("incrementAsync")
-        .addEventListener("click", function () {
-          setTimeout(function () {
-            store.dispatch(increment());
-          }, 1000);
-        });
-    </script>
+    <!-- Redux code  -->
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.redux__content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  color: #04b066;
+  background: #1c1e1f;
+  width: 400px;
+}
+#value {
+  font-size: 200px;
+  font-weight: bold;
+}
+#increment,
+#decrement,
+#incrementIfOdd,
+#incrementAsync {
+  padding: 10px;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid #566155;
+  color: #566155;
+  transition: 0.5s;
+  cursor: pointer;
+  background: transparent;
+}
+#increment:hover,
+#decrement:hover,
+#incrementIfOdd:hover,
+#incrementAsync:hover {
+  background: transparent;
+  border: 2px solid #04b066;
+  color: #04b066;
+}
+#increment:focus,
+#decrement:focus,
+#incrementIfOdd:focus,
+#incrementAsync:focus {
+  outline: 0;
+}
